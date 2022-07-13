@@ -1,0 +1,595 @@
+:root {
+    --white-color: #FFFFFF;
+    --gray-color: #EEEEEE;
+    --main-color: #DB1429;
+    --gap: 3rem;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Patua+One&display=swap');
+
+/** FonteS: 
+font-family: 'Lobster', cursive;
+font-family: 'Patua One', cursive; **/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Patua One', cursive;
+    font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lobster', cursive;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-family: 'Patua One', cursive;
+    margin-bottom: 3rem;
+}
+
+/** TAGS UTILITÁRIAS **/
+
+.main-content {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 10rem 3rem;
+
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.main-bg {
+    background-size: cover;
+    background-position: center center;
+    color: var(--white-color);
+    background-color: #2C0000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='%234f0408' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23720810' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23950c19' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23b81021' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23DB1429' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--main-color)
+}
+
+
+/** Menu **/
+
+.menu {
+    background: var(--white-color);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--gray-color);
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+.menu h1 {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li a {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    padding: 2rem;
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    background: var(--main-color);
+    bottom: -0.08rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    transition: all 360ms ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%
+}
+
+.menu-spacing {
+    height: 6.5rem;
+}
+
+/** Home **/
+
+.home-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+    align-items: center;
+}
+
+.home-content-text h2 {
+    margin-bottom: 7.5rem;
+}
+
+.home-content-text,
+.home-content-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.home-content-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/** Introduction **/
+
+.intro-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 64rem;
+    text-align: center;
+    align-items: center;
+}
+
+
+.intro-content h2 {
+    margin-bottom: 6rem;
+}
+
+/** Presentation **/
+
+.pres-content {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    flex-flow: column wrap;
+}
+
+.grid-pres-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.p-title {
+    margin-bottom: 8rem;
+}
+
+.grid-pres-content h3 {
+    margin-bottom: 4rem;
+    font-size: 3rem;
+    position: relative;
+    padding-left: 6rem;
+    text-transform: none;
+}
+
+.grid-pres-content h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -3.5rem;
+    left: -2rem;
+    transform: rotate(5.5deg);
+}
+
+/** Exposure **/
+
+.exposure-content {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    flex-flow: column wrap;
+
+}
+
+.grid-exposure-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+
+}
+
+.grid-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.grid-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.grid-img img:hover {
+    transform: translate(-3%, 3%) scale(1.1) rotate(5deg);
+}
+
+/** Information **/
+
+.inf-content {
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100vh;
+}
+
+.inf-content h2 {
+    margin-bottom: 8rem;
+}
+
+.grid-inf-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: var(--gap);
+    counter-reset: grid-inf;
+}
+
+.grid-inf-content li {
+    list-style: disc;
+}
+
+.grid-inf-content h3 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    padding-left: 5rem;
+    position: relative;
+    text-transform: none;
+}
+
+.grid-inf-content h3::before {
+    counter-increment: grid-inf;
+    content: counter(grid-inf);
+    position: absolute;
+    font-size: 8rem;
+    top: -3.5rem;
+    left: -2rem;
+    transform: rotate(5.5deg);
+}
+
+/** Prices **/
+
+.pric-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    max-width: 64rem;
+    align-items: center;
+    text-align: center;
+}
+
+.pric-content h2 {
+    margin-bottom: 6rem;
+}
+
+.pric-content p {
+    margin-bottom: 7rem;
+}
+
+.responsive-table {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 0.1rem solid gray;
+    padding: 1rem;
+    text-align: left;
+    white-space: nowrap;
+
+}
+
+thead th,
+tfoot td {
+    background: gray;
+}
+
+caption {
+    font-size: 1.6rem;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+/** Know More **/
+
+.more-content-one {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.more-content-text,
+.more-content-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.more-content-one h2 {
+    margin-bottom: 6rem;
+}
+
+.more-content-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.more-form {
+    grid-column: span 2;
+}
+
+.more-form .field-form {
+    display: flex;
+    flex-flow: row wrap;
+    border: none;
+    gap: var(--gap);
+
+}
+
+.more-form legend {
+    font-style: italic;
+    margin-bottom: 1.6rem;
+}
+
+.more-form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1 1 40rem;
+
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 1.5rem 2rem;
+    border: none;
+    background: var(--white-color);
+    width: 100%;
+    border-radius: 2rem;
+    font-size: 2rem;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 1rem 0.5rem var(--white-color);
+}
+
+body .full-tudo {
+    flex: 1 1 100%;
+    width: 100%;
+
+}
+
+textarea {
+    border-radius: 2rem;
+}
+
+.form-group button {
+    background: none;
+    padding: 1.5rem 2rem;
+    border: var(--white-color) solid 0.5rem;
+    color: var(--white-color);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 360ms ease-in-out;
+    border-radius: 2rem;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--main-color);
+}
+
+/** Footer **/
+
+.footer {
+    text-align: center;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.footer p {
+    font-size: 1.6rem;
+    padding: 5rem 3rem 3rem 3rem;
+}
+
+.footer a {
+    color: var(--main-color);
+}
+
+.heart {
+    color: blue;
+}
+
+.close-menu {
+    display: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--main-color);
+    transform: rotate(-90deg);
+    border: 0.1rem solid var(--primary-color);
+}
+
+/** Responsive **/
+
+@media (max-width: 80rem) {
+
+    .home-content,
+    .grid-pres-content,
+    .grid-exposure-content,
+    .grid-inf-content,
+    .more-content-one,
+    .pric-content {
+        grid-template-columns: 1fr;
+    }
+
+    .field-form  {
+        margin-top: 5rem;
+    }
+
+    .grid-img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .grid-img img {
+        width: 100%;
+    }
+
+    .inf-content h2 {
+        font-size: 4.3rem;
+    }
+
+    .menu {
+        bottom: 0;
+        display: none;
+    }
+
+    .menu-content,
+    .menu-content ul {
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .close-menu {
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+    }
+
+    .close-menu-label::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        right: 2rem;
+        top: 2rem;
+        background: var(--main-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~.menu {
+        display: block
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×'
+    }
+
+    .menu-spacing {
+        display: none;
+    }
+}
